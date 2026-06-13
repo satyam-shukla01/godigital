@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Satyam Shukla | Web Associate</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--bg:#0b1020;--card:#151c33;--text:#fff;--accent:#4f8cff}
+.light{--bg:#f5f7fb;--card:#fff;--text:#111;--accent:#2563eb}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);transition:.3s}
+nav{position:sticky;top:0;display:flex;justify-content:space-between;padding:15px 25px;background:rgba(0,0,0,.25);backdrop-filter:blur(10px)}
+.logo{font-weight:700}
+nav a{color:var(--text);text-decoration:none;margin:0 10px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;background:linear-gradient(135deg,#111936,#0b1020)}
+.hero h1{font-size:3.5rem}
+.hero p{max-width:700px;margin:15px auto}
+.btn{display:inline-block;padding:12px 22px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;margin:8px}
+section{max-width:1200px;margin:auto;padding:80px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);padding:20px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.2)}
+.skills span{display:inline-block;background:var(--accent);padding:8px 12px;border-radius:20px;margin:6px;color:#fff}
+h2{text-align:center;margin-bottom:30px}
+.whatsapp{position:fixed;right:20px;bottom:20px;text-decoration:none;font-size:28px;background:#25D366;color:#fff;padding:14px;border-radius:50%}
+footer{text-align:center;padding:25px}
+.toggle{border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">Satyam Shukla</div>
+<div>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+<button class="toggle" onclick="document.body.classList.toggle('light')">🌙/☀️</button>
+</div>
+</nav>
+
+<section class="hero">
+<h1>Satyam Shukla</h1>
+<h3>Web Associate & Frontend Developer</h3>
+<p>I help local businesses grow online with modern websites, landing pages, Google Business optimization and digital solutions.</p>
+<div>
+<a class="btn" href="#projects">View Projects</a>
+<a class="btn" href="https://wa.me/919685423624">Hire Me</a>
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>Passionate Web Associate from Bhopal focused on responsive websites, business growth, user experience and modern web solutions.</p>
+</div>
+</section>
+
+<section>
+<h2>Skills</h2>
+<div class="skills" style="text-align:center">
+<span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>GitHub</span><span>SEO Basics</span><span>Responsive Design</span>
+</div>
+</section>
+
+<section id="projects">
+<h2>Featured Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Fitness Pro Gym</h3>
+<p>Modern gym website with plans, trainers, enquiry form and WhatsApp integration.</p>
+<a class="btn" href="#">Live Demo</a>
+</div>
+<div class="card">
+<h3>Bright Future Coaching</h3>
+<p>Coaching website with admissions, course details and lead generation forms.</p>
+<a class="btn" href="#">Live Demo</a>
+</div>
+<div class="card">
+<h3>Real Estate Pro</h3>
+<p>Property listing and client lead collection website.</p>
+<a class="btn" href="#">Live Demo</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2>Services</h2>
+<div class="grid">
+<div class="card">Business Website Development</div>
+<div class="card">Landing Page Design</div>
+<div class="card">Google Business Profile Setup</div>
+<div class="card">Website Redesign</div>
+<div class="card">Basic SEO Optimization</div>
+<div class="card">Portfolio Websites</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>📞 9685423624</p>
+<p>📧 a.satyamshukla@gmail.com</p>
+<p>📍 Bhopal, India</p>
+</div>
+</section>
+
+<footer>© 2026 Satyam Shukla • Web Associate</footer>
+<a class="whatsapp" href="https://wa.me/919685423624">💬</a>
+</body>
+</html>
