@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Dental Clinic | Advanced Oral Healthcare & Aesthetics</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS RESET & REVENUE-DRIVEN DESIGN VARIABLES */
+        :root {
+            --bg-base: #f8fafc;
+            --bg-surface: #ffffff;
+            --primary-brand: #0f172a;
+            --accent-clinical: #0d9488;
+            --accent-gold: #b45309;
+            --gradient-premium: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --text-main: #334155;
+            --text-light: #64748b;
+            --font-display: 'Cinzel', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --subtle-border: rgba(15, 23, 42, 0.08);
+            --transition-elastic: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* STRUCTURAL UTILITIES & SCANNABLE TYPOGRAPHY */
+        section {
+            padding: 120px 24px;
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            color: var(--primary-brand);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-header .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--accent-clinical);
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ENGINE FOR INTERACTIVE MOTION REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NAVIGATION ARCHITECTURE */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--subtle-border);
+            transition: var(--transition-elastic);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 22px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-brand);
+        }
+
+        .logo span {
+            color: var(--accent-clinical);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary-brand);
+            transition: var(--transition-elastic);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-clinical);
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--primary-brand);
+        }
+
+        /* DESIGN ENGINE BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition-elastic);
+            cursor: pointer;
+            border-radius: 0px; 
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-brand);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-clinical);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-brand);
+            border: 1px solid var(--primary-brand);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(15, 23, 42, 0.03);
+            border-color: var(--accent-clinical);
+            color: var(--accent-clinical);
+            transform: translateY(-3px);
+        }
+
+        /* 1. HERO SECTION (NEOCLASSICAL CLEAN AESTHETIC) */
+        .hero-section {
+            max-width: 100%;
+            padding: 0;
+            height: 100vh;
+            min-height: 750px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            padding: 0 48px;
+            margin-left: calc((100vw - 1300px) / 2 + 24px);
+        }
+
+        @media (max-width: 1350px) {
+            .hero-content { margin-left: 24px; }
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 500;
+            color: var(--primary-brand);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-clinical);
+            display: block;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 44px;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* 2. CLINICAL ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: var(--primary-brand);
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 36px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-surface);
+            border-bottom: 3px solid transparent;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            transition: var(--transition-elastic);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: var(--accent-clinical);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+        }
+
+        .feature-card i {
+            font-size: 1.8rem;
+            color: var(--accent-clinical);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h4 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-brand);
+        }
+
+        .about-image {
+            position: relative;
+            height: 550px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 3. CLINICAL SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--bg-surface);
+            padding: 50px 40px;
+            transition: var(--transition-elastic);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .service-card:hover {
+            background: var(--gradient-premium);
+            color: #fff;
+            transform: scale(1.03);
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+        }
+
+        .service-icon-box {
+            margin-bottom: 30px;
+        }
+
+        .service-icon-box i {
+            font-size: 2.4rem;
+            color: var(--accent-clinical);
+        }
+
+        .service-card:hover .service-icon-box i {
+            color: #fff;
+        }
+
+        .service-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: var(--primary-brand);
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-info h3 {
+            color: #fff;
+        }
+
+        .service-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-info p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* 4. PREMIUM PRICING SCHEDULING CARDS */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .pricing-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--subtle-border);
+            padding: 60px 40px;
+            text-align: center;
+            transition: var(--transition-elastic);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.08);
+            border-color: var(--accent-clinical);
+        }
+
+        .plan-name {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .plan-price {
+            margin-bottom: 40px;
+        }
+
+        .plan-price .currency {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary-brand);
+            vertical-align: top;
+        }
+
+        .plan-price .amount {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-brand);
+        }
+
+        .plan-features {
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .plan-features li {
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .plan-features li i {
+            color: var(--accent-clinical);
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+        }
+
+        /* 5. MEDICAL PRACTITIONERS SECTION */
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .trainer-card {
+            background: var(--bg-surface);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            transition: var(--transition-elastic);
+        }
+
+        .trainer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        }
+
+        .trainer-img-box {
+            position: relative;
+            height: 420px;
+            background: #f1f5f9;
+            overflow: hidden;
+        }
+
+        .trainer-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(241,245,249,0.2) 0%, rgba(15,23,42,0.05) 100%);
+        }
+
+        .trainer-art {
+            font-family: var(--font-display);
+            font-size: 9rem;
+            font-weight: 700;
+            color: rgba(13, 148, 136, 0.06);
+            user-select: none;
+        }
+
+        .trainer-details {
+            padding: 35px 24px;
+            text-align: center;
+        }
+
+        .trainer-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--primary-brand);
+            margin-bottom: 6px;
+        }
+
+        .trainer-details p {
+            color: var(--accent-clinical);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .trainer-exp {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 14px;
+            display: block;
+        }
+
+        /* 6. RESPONSIVE CLINICAL GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition-elastic);
+        }
+
+        .gallery-overlay i {
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* 7. PATIENT CLINICAL TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-surface);
+            padding: 50px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: rgba(13, 148, 136, 0.08);
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .testimonial-card p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .reviewer-info {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 20px;
+        }
+
+        .reviewer-meta h4 {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-brand);
+        }
+
+        .reviewer-meta .stars {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+
+        /* 8 & 9. INTEGRATED REGISTRATION AND LOCATION ENGINE */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .inquiry-box {
+            background: var(--bg-surface);
+            padding: 60px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+            border: 1px solid var(--subtle-border);
+        }
+
+        .inquiry-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--primary-brand);
+        }
+
+        .inquiry-box p {
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 26px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: var(--primary-brand);
+        }
+
+        .form-control {
+            width: 100%;
+            background: #f8fafc;
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 16px 20px;
+            color: var(--primary-brand);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            border-radius: 0px;
+            transition: var(--transition-elastic);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-clinical);
+            background: #fff;
+        }
+
+        .inquiry-box .btn {
+            width: 100%;
+            margin-top: 14px;
+            gap: 10px;
+        }
+
+        .contact-info-box {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 46px;
+            height: 46px;
+            background: rgba(1d, 148, 136, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon i {
+            font-size: 1.2rem;
+            color: var(--accent-clinical);
+        }
+
+        .info-details h4 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--primary-brand);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .info-details p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 10. SYSTEM FOOTER ARCHITECTURE */
+        footer {
+            background: var(--primary-brand);
+            color: rgba(255,255,255,0.7);
+            padding: 80px 24px 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .footer-logo span {
+            color: var(--accent-clinical);
+        }
+
+        .footer-dev-info {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .developer-tag {
+            text-align: right;
+        }
+
+        .developer-tag strong {
+            color: #fff;
+        }
+
+        .developer-tag span {
+            color: var(--accent-clinical);
+            font-size: 0.75rem;
+            display: block;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        /* FLEXIBLE MEDIA LAYER RESPONSIVENESS */
+        @media (max-width: 1100px) {
+            .services-grid, .pricing-grid, .trainers-grid, .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-grid, .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .about-image {
+                height: 420px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 20px;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                border-bottom: 1px solid var(--subtle-border);
+                flex-direction: column;
+                padding: 40px;
+                gap: 30px;
+                display: none;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .services-grid, .pricing-grid, .trainers-grid, .gallery-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .inquiry-box {
+                padding: 40px 24px;
+            }
+            .footer-dev-info {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .developer-tag {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SYSTEM NAVIGATION LAYER -->
+    <header id="nav-bar">
+        <div class="nav-container">
+            <a href="#" class="logo">Apex<span>Dental</span></a>
+            <div class="nav-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+            <nav class="nav-links" id="nav-menu">
+                <a href="#">Home</a>
+                <a href="#about">Clinic</a>
+                <a href="#services">Specialties</a>
+                <a href="#pricing">Fees</a>
+                <a href="#trainers">Medical Team</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Appointments</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.75rem;">Book Visit</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. NEOCLASSICAL HERO INFRASTRUCTURE -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="reveal">Exceptional Care. <span>Beautiful Smiles.</span></h1>
+            <p class="reveal">Advanced biomimetic dentistry and comprehensive oral aesthetic treatment protocols executed within a pristine clinical workspace architecture.</p>
+            <div class="hero-buttons reveal">
+                <a href="#contact" class="btn btn-primary">Book Appointment</a>
+                <a href="#services" class="btn btn-secondary">Our Specialties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. CLINIC ABOUT INFRASTRUCTURE -->
+    <section id="about" class="reveal">
+        <div class="about-grid">
+            <div class="about-text">
+                <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                    <h2>Modern Oral Healthcare</h2>
+                    <div class="divider" style="margin: 0;"></div>
+                </div>
+                <h3>Established in 2018</h3>
+                <p>Apex Dental Clinic is dedicated to helping patients achieve their oral health goals through expert clinical coaching, modern surgical equipment, and personalized therapeutic treatment plans.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <h4>Certified Surgeons</h4>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-microscope"></i>
+                        <h4>Modern Equipment</h4>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-kit-medical"></i>
+                        <h4>Personalized Diagnostics</h4>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h4>Sterilization Protocols</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="Advanced Clinical Operations">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SPECIALIZED SERVICES BLUEPRINT -->
+    <section id="services" class="reveal">
+        <div class="section-header">
+            <h2>Clinical Specialties</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon-box"><i class="fa-solid fa-tooth"></i></div>
+                <div class="service-info">
+                    <h3>Root Canal Therapy</h3>
+                    <p>Microscopic endodontic architectures designed to preserve natural dental structure with zero procedural discomfort.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-box"><i class="fa-solid fa-sparkles"></i></div>
+                <div class="service-info">
+                    <h3>Cosmetic Veneers</h3>
+                    <p>Ultra-thin premium porcelain configurations custom adapted to produce pristine aesthetic symmetry and luminosity.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-box"><i class="fa-solid fa-shuttle-space"></i></div>
+                <div class="service-info">
+                    <h3>Dental Implants</h3>
+                    <p>Advanced titanium osseointegration restoration engineering structured to replace missing teeth permanently.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div class="service-info">
+                    <h3>Laser Whitening</h3>
+                    <p>Accelerated non-invasive medical dental bleaching protocols achieving maximum systemic brightness safely.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-box"><i class="fa-solid fa-shield-virus"></i></div>
+                <div class="service-info">
+                    <h3>Periodontal Care</h3>
+                    <p>Comprehensive laser therapy workflows focused entirely on soft tissue health optimization models.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-box"><i class="fa-solid fa-children"></i></div>
+                <div class="service-info">
+                    <h3>Pediatric Dentistry</h3>
+                    <p>Specialized positive-reinforcement oral healthcare treatments structured precisely for child developmental comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TRANSPARENT FEE STRUCTURE -->
+    <section id="pricing" class="reveal">
+        <div class="section-header">
+            <h2>Diagnostic & Treatment Fees</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="pricing-grid">
+            <!-- Consult Plan -->
+            <div class="pricing-card">
+                <div class="plan-name">Consultation Pack</div>
+                <div class="plan-price">
+                    <span class="currency">₹</span>
+                    <span class="amount">999</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-check"></i> Comprehensive Visual Exam</li>
+                    <li><i class="fa-solid fa-check"></i> HD Digital Intraoral Scans</li>
+                    <li><i class="fa-solid fa-check"></i> Primary Prognosis Blueprint</li>
+                    <li style="opacity: 0.4;"><i class="fa-solid fa-xmark"></i> Advanced Ultrasonic Scaling</li>
+                    <li style="opacity: 0.4;"><i class="fa-solid fa-xmark"></i> Complex Surgical Extractions</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Book Diagnostics</a>
+            </div>
+            <!-- Prophylaxis Plan -->
+            <div class="pricing-card" style="border-color: var(--accent-clinical);">
+                <div class="plan-name" style="color: var(--accent-clinical);">Preventative Care</div>
+                <div class="plan-price">
+                    <span class="currency">₹</span>
+                    <span class="amount">1999</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-check"></i> Full Mouth Digital Radiography</li>
+                    <li><i class="fa-solid fa-check"></i> Advanced Ultrasonic Scaling</li>
+                    <li><i class="fa-solid fa-check"></i> Polishing & Fluoride Therapy</li>
+                    <li><i class="fa-solid fa-check"></i> Custom Preventive Map</li>
+                    <li style="opacity: 0.4;"><i class="fa-solid fa-xmark"></i> Specialized Restorations</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Book Preventive</a>
+            </div>
+            <!-- Advanced Plan -->
+            <div class="pricing-card">
+                <div class="plan-name">Restorative Treatment</div>
+                <div class="plan-price">
+                    <span class="currency">₹</span>
+                    <span class="amount">2999</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-check"></i> Complex Biomimetic Fillings</li>
+                    <li><i class="fa-solid fa-check"></i> Root Canal Primary Treatment</li>
+                    <li><i class="fa-solid fa-check"></i> Desensitization Frameworks</li>
+                    <li><i class="fa-solid fa-check"></i> Local Anesthetic Infrastructure</li>
+                    <li><i class="fa-solid fa-check"></i> Priority Emergency Allocation</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Book Restoration</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CLINICAL MEDICAL PRACTITIONERS -->
+    <section id="trainers" class="reveal">
+        <div class="section-header">
+            <h2>Medical Practitioners</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="trainers-grid">
+            <!-- Doctor 1 -->
+            <div class="trainer-card">
+                <div class="trainer-img-box">
+                    <div class="trainer-placeholder">
+                        <div class="trainer-art">RS</div>
+                    </div>
+                </div>
+                <div class="trainer-details">
+                    <h3>Dr. Rahul Sharma</h3>
+                    <p>Head Dental Surgeon</p>
+                    <span class="trainer-exp">8+ Years Clinical Experience</span>
+                </div>
+            </div>
+            <!-- Doctor 2 -->
+            <div class="trainer-card">
+                <div class="trainer-img-box">
+                    <div class="trainer-placeholder">
+                        <div class="trainer-art">AV</div>
+                    </div>
+                </div>
+                <div class="trainer-details">
+                    <h3>Dr. Aman Verma</h3>
+                    <p>Implantology Specialist</p>
+                    <span class="trainer-exp">6+ Years Surgical Experience</span>
+                </div>
+            </div>
+            <!-- Doctor 3 -->
+            <div class="trainer-card">
+                <div class="trainer-img-box">
+                    <div class="trainer-placeholder">
+                        <div class="trainer-art">PS</div>
+                    </div>
+                </div>
+                <div class="trainer-details">
+                    <h3>Dr. Priya Singh</h3>
+                    <p>Orthodontist & Aesthetic Expert</p>
+                    <span class="trainer-exp">5+ Years Clinical Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CLINICAL SPACE GALLERY -->
+    <section id="gallery" class="reveal">
+        <div class="section-header">
+            <h2>The Clinical Environment</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="gallery-grid">
+            <div <div class="gallery-item">
+    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67" alt="Dental Examination">
+    <div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div>
+</div>
+
+<div class="gallery-item">
+    <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99" alt="Modern Dental Clinic">
+    <div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div>
+</div>
+
+<div class="gallery-item">
+    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09" alt="Dentist With Patient">
+    <div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div>
+</div>
+
+<div class="gallery-item">
+    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="Dental Treatment Room">
+    <div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div>
+</div>
+
+<div class="gallery-item">
+    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe" alt="Professional Dental Care">
+    <div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div>
+</div>
+
+<div class="gallery-item">
+    <img src="https://images.unsplash.com/photo-1588774069164-ecf4c8b62f6f" alt="Dental Equipment">
+    <div class="gallery-overlay"><i class="fa-solid fa-plus"></i></div>
+</div>
+    </section>
+
+    <!-- 7. PATIENT SATISFACTION INDEX -->
+    <section id="testimonials" class="reveal">
+        <div class="section-header">
+            <h2>Patient Transformations</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>"Best dental treatment infrastructure in MP Nagar. The surgeons are exceptionally supportive and systematically detailed throughout the diagnosis."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-meta">
+                        <h4>Rohit Patel</h4>
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>"Excellent clinical equipment and pristine clean environment. This minimalist, high-end neoclassical UI reflects the actual aesthetic precision of the clinic."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-meta">
+                        <h4>Akash Verma</h4>
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>"Completed my advanced aesthetic crown restoration here. The structural integration was seamless and completely pain-free. Highly recommended."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-meta">
+                        <h4>Neha Singh</h4>
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8 & 9. SCHEDULING INFRASTRUCTURE -->
+    <section id="contact" class="reveal">
+        <div class="contact-wrapper">
+            <!-- Appointment Booking Engine -->
+            <div class="inquiry-box">
+                <h3>Schedule Appointment</h3>
+                <p>Provide your clinical prerequisites to route an instant prioritized booking request directly to our front desk via WhatsApp routing.</p>
+                <form id="whatsappForm">
+                    <div class="form-group">
+                        <label for="name">Patient Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="e.g. John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Active Mobile Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="e.g. +91 XXXXX XXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="e.g. contact@domain.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal">Primary Oral Treatment Objective</label>
+                        <input type="text" id="goal" class="form-control" placeholder="e.g. Routine Cleaning, Veneers, Tooth Ache" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Dispatch Routing Sequence</button>
+                </form>
+            </div>
+            
+            <!-- Strategic Contact Infrastructure -->
+            <div class="contact-info-box">
+                <div class="section-header" style="text-align: left; margin-bottom: 20px;">
+                    <h2>Clinical Headquarters</h2>
+                    <div class="divider" style="margin: 0;"></div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-map-pin"></i></div>
+                    <div class="info-details">
+                        <h4>Geographic Address</h4>
+                        <p>Apex Dental Clinic<br>MP Nagar Zone-1<br>Bhopal, Madhya Pradesh</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone-flip"></i></div>
+                    <div class="info-details">
+                        <h4>Direct Clinical Line</h4>
+                        <p>+91 96854 23624</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                    <div class="info-details">
+                        <h4>Digital Mail Dispatch</h4>
+                        <p>info@titanfitnessclub.in</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <div class="info-details">
+                        <h4>Operating Timelines</h4>
+                        <p>Monday - Saturday: 5:00 AM – 10:00 PM<br>Sunday: 7:00 AM – 2:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. ARCHITECTURAL SYSTEM FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Apex<span>Dental</span></div>
+            <p style="font-size: 0.9rem; max-width: 550px; opacity: 0.6;">This interface demonstrates premium architectural layout versatility. Engineered entirely utilizing asymmetrical structural white space parameters.</p>
+            <div class="footer-dev-info">
+                <div>&copy; 2026 Apex Dental Clinic. All diagnostic and engineering assets reserved.</div>
+                <div class="developer-tag">
+                    Designed & Developed by <strong>Satyam Shukla</strong>
+                    <span>Vortax digital partners</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC PIPELINE -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navBar = document.getElementById('nav-bar');
+        const whatsappForm = document.getElementById('whatsappForm');
+
+        // Responsive Menu Operations Handler
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            const icon = menuToggle.querySelector('i');
+            icon.className = navMenu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered';
+        });
+
+        // Dynamic Elegant Compression On Scroll Engine
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 60) {
+                navBar.style.padding = '4px 0';
+                navBar.style.boxShadow = '0 15px 40px rgba(0,0,0,0.03)';
+            } else {
+                navBar.style.padding = '0';
+                navBar.style.boxShadow = 'none';
+            }
+            revealSystemElements();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                menuToggle.querySelector('i').className = 'fa-solid fa-bars-staggered';
+            });
+        });
+
+        // Precision Element Transition Controller
+        function revealSystemElements() {
+            const elements = document.querySelectorAll('.reveal');
+            const innerHeight = window.innerHeight;
+            const activationOffset = 100;
+
+            elements.forEach(el => {
+                const positionTop = el.getBoundingClientRect().top;
+                if(positionTop < innerHeight - activationOffset) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(revealSystemElements, 150);
+        });
+
+        // Advanced Automated Data Marshalling for WhatsApp Router
+        whatsappForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const pName = document.getElementById('name').value.trim();
+            const pPhone = document.getElementById('phone').value.trim();
+            const pEmail = document.getElementById('email').value.trim();
+            const pGoal = document.getElementById('goal').value.trim();
+            
+            const targetRoutingEndpoint = "919685423624";
+            
+            const messageManifest = `Hello Apex Dental Clinic, I would like to establish an appointment. Diagnostics manifest:\n\n` +
+                                   `*Patient Name:* ${pName}\n` +
+                                   `*Contact Number:* ${pPhone}\n` +
+                                   `*Patient Email:* ${pEmail}\n` +
+                                   `*Treatment Objective:* ${pGoal}`;
+                                
+            const serializedPayload = encodeURIComponent(messageManifest);
+            const communicationEndpoint = `https://wa.me/${targetRoutingEndpoint}?text=${serializedPayload}`;
+            
+            window.open(communicationEndpoint, '_blank');
+        });
+    </script>
+</body>
+</html>
